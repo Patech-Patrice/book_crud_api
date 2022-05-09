@@ -56,7 +56,7 @@ const Books = () => {
                   onChange={event => {setSearchGenre(event.target.value)}}
                 />
               </label>
-          <Link className="nav-links-container" href="" to="/books/create"> Add New Book</Link>
+         
         
 
         

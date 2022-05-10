@@ -55,7 +55,7 @@ module Api
 
     def edit
       @book = Book.find(params[:id])
-      render :edit
+      render json: @book
     end
 
    

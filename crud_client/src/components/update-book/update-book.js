@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
-const EditBook = (callback) => {
+const UpdateBook = (callback) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -106,6 +106,6 @@ const EditBook = (callback) => {
     );
   };
 
-  export default EditBook;
+  export default UpdateBook;
 
 

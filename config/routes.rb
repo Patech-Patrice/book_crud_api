@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
  
   get 'books', to: 'books#index', as: 'books'    
-  get '/books/new', to: 'books#new'
+  get '/books/new', to: 'books#create'
   post '/books', to: 'books#create'
   get 'books/:id', to: 'books#show', as: 'book'
   get '/books/:id/edit', to: 'books#edit'

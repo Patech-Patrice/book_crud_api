@@ -58,7 +58,7 @@ const Books = () => {
               </label>
          
         
-
+            <Link className="nav-links-container"  to='/books/new'> Add New Book</Link>  
         
 
 

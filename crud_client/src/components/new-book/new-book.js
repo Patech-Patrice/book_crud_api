@@ -68,22 +68,22 @@ const NewBook = () => {
 
     return (
       <div>
-        This is the new book page
+     
         <h4> Create a New Book:</h4>
         <form  onSubmit={handleSubmit}>
-      Title: <textarea type='text' rows="1" cols="45" name="title" value={title} onChange={handleChange} />
+      Title: <textarea type='text' rows="5" cols="30" name="title" value={title} onChange={handleChange} />
       <br />
       <br />
-          Genre: <textarea rows="2" cols="45" name="genre" value={genre} onChange={handleChange} /> 
+          Genre: <textarea rows="2" cols="30" name="genre" value={genre} onChange={handleChange} /> 
       <br />
       <br />
-      Cover Image URL: <textarea rows="2" cols="45" name="image_url" value={image_url} onChange={handleChange} />
+      Cover Image URL: <textarea rows="6" cols="30" name="image_url" value={image_url} onChange={handleChange} />
       <br />
       <br />
-      Description: <textarea name="body" rows="4" cols="50" defaultValue={body} onChange={handleChange} />  
+      Description: <textarea name="body" rows="6" cols="50" defaultValue={body} onChange={handleChange} />  
       <br />
       <br />
-      Author: <input name="author" value={author} onChange={handleChange} />
+      Author: <textarea  rows="2" cols="30" name="author" value={author} onChange={handleChange} />
       <br />
       <br />
       <button onChange={handleSubmit} type="submit">Create Book</button>

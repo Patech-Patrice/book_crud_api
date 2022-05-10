@@ -1,8 +1,10 @@
 import React from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import EditBook from '../../components/edit-book/edit-book.js';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
 const Book = (props) => {
 
@@ -15,13 +17,8 @@ const Book = (props) => {
   const [author, setAuthor] = useState('');
 
 
-
-
-
-
-
   const { id } = useParams();
-  const navigate = useNavigate();
+
   
 
   useEffect(() => {
@@ -56,30 +53,22 @@ const Book = (props) => {
 
 
 return (
-      <div className='book-body-container' key={book.id} > 
-          <div>
-     
+
+      <div key={book.id}>     
+                          <Card style={{ width: '80rem' }}>
+                          <Card.Img variant="top" src={img} />
+                            <Card.Body>
+                              <Card.Title style={{height: '', width: ''}}>{title}</Card.Title>
+                              <Card.Subtitle className="mb-2 text-muted">{genre}</Card.Subtitle>
+                              <Card.Subtitle className="mb-2 text-muted">{author}</Card.Subtitle>
+                             <Card.Text>
+                                {body}
+                              </Card.Text>
+                        <Card.Link href={`/books/update/` + id }> Edit Book</Card.Link>
+                      </Card.Body>
+                    </Card>
+
         </div>
-   
-            <h3>{title}</h3>
-            <h6>{author}</h6>
-            <div className="card-text">
-                <small className="text-muted">{genre}</small>
-                <p>{body}</p>
-            </div>
-            <div className="col-md-4">
-                    {img && <img  src={img} style={{height: '300px', width: '200px'}} ></img>}
-            </div>
-          
-         
-         
-            <button>
-            <Link className='update' to={`/books/update/` + id }>Edit</Link>
-            {/* <Link className=""  to={`/books/${book.id}`}> Edit Book  </Link> */}
-            </button>
-
-
-      </div>
   
       )
 }

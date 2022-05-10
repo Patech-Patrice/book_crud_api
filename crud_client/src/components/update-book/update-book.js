@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useRef } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import React, {useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+
 
 
 const UpdateBook = (callback) => {
@@ -71,7 +71,7 @@ const UpdateBook = (callback) => {
     };
       fetchData();
       console.log('');
-}, []);
+}, [id]);
 
 
     return (

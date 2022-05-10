@@ -1,7 +1,5 @@
 import './App.css';
-import axios from 'axios';
-import { useState, useEffect, Fragment, useContext } from 'react';
-import { Routes, Route, Link, Outlet, useParams, useNavigate } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Books from './components/books/books.js';
 import Book from './components/book/book.js';
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+
+
 
 const Book = (props) => {
 
@@ -42,7 +42,7 @@ const Book = (props) => {
     };
       fetchData();
     
-}, []);
+}, [id]);
 
 
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   patch 'books/:id/update', to: 'books#update'
   put 'books/:id', to: 'books#update'
   delete '/books/:id', to: 'books#destroy'
+  
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

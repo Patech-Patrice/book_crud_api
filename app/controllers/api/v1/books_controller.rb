@@ -1,8 +1,7 @@
 module Api
   module V1
     class BooksController < ApplicationController
-    # before_action :set_book,  only: %i[ show update destroy ]
-    # before_action :find_book, only: [ :edit, :update, :destroy]
+
 
     
 
@@ -24,7 +23,8 @@ module Api
 
     # GET /books/:id
       def show
-        @book = Book.find_by_id params[:id]
+        # @book = Book.find(params[:id])
+        @book = Book.find_by(id: params[:id])
 
          render json: @book
       end 
@@ -36,7 +36,7 @@ module Api
       if @book.save
         render json: @book, status: :created
       else
-        render json: @book.errors, status: :unprocessable_entity
+        render json: @book, status: :unprocessable_entity
       end
     end
 
@@ -62,33 +62,18 @@ module Api
 
     # DELETE /books/1
     def destroy
-      @book = Book.find_by(id: params[:id])
-      # @book.destroy
-      if @book.destroy
+      @book = Book.find(params[:id]).destroy!
         head :no_content, status: :ok
-      else
-        render json: @book.errors, status: :unprocessable_entity
-    end
+     
   end
 
     private
       # Use callbacks to share common setup or constraints between actions.
-      def set_book
-        @book = Book.find_by_id params[:id]
-      end
-
    
-
-      def find_book
-        @book = Book.find(params[:id])
-      end
-
-      
-
       # Only allow a list of trusted parameters through.
       def book_params
         
-          params.require(:book).permit(:title, :genre, :body, :image_url, :author)
+          params.require(:book).permit(:id, :title, :genre, :body, :image_url, :author)
       end
 
  

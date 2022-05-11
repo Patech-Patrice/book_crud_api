@@ -33,33 +33,17 @@ const App = () => {
       <h2>Welcome to the Book Logger App</h2>
       <Link to="/books">View Books</Link>
 
-      <div>
-
-      
-        
-   
-      
-      </div>
+ 
    
 
             <Routes>
-                                               
-                          {/* <Route path='/books/create' element={<BookInput/>} />
-                          <Route path='/books/update/:id' element={<EditBook />} />
-                          <Route path="/books" element={<Books />} />  
-                           <Route path="/books/:id" element={<Book />} /> 
-                          <Route index element={<Home/>} />                         */}
-
-                      <Route path='/' element={<Home/>} /> 
-                      <Route path='/books/new' element={<NewBook/>} />
-                          <Route path='/books/update/:id' element={<UpdateBook />} />
-                          <Route path="/books" element={<Books />} />  
-                           <Route path="/books/:id" element={<Book />} /> 
-                     
-
-
-                    
-                   </Routes>
+                <Route path='/' element={<Home/>} /> 
+                <Route path='/books/new' element={<NewBook/>} />
+                <Route path='/books/update/:id' element={<UpdateBook />} />
+                <Route path="/books" element={<Books />} />  
+                <Route path="/books/:id" element={<Book />} />
+                <Route path="/books/delete:id" element={<Book />} />
+            </Routes>
     </div>
   );
 }

@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useNavigate } from 'react';
 import axios from 'axios';
-import { Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
+
 
 
 
@@ -22,6 +24,25 @@ const Books = () => {
   const [books, setBooks] = useState([]);
   const [searchGenre, setSearchGenre] = useState([]);
 
+  // const deleteBook = (id) => {
+  //   console.log(books.id);
+  //     alert("Delete button pressed")
+  // }
+
+  // const deleteBook = (e, id) => {
+  //   fetch('http://localhost:3000/api/v1/books/' + id, {
+  //     method: 'DELETE',
+  //   }).then(() => {
+  //    console.log(books);
+  //     setBooks();
+  //    alert('Book Deleted');
+  
+  //    // navigate('/books'); 
+  //   })
+  // }
+
+
+
           
 
           useEffect(() => {
@@ -30,20 +51,7 @@ const Books = () => {
                 .catch(error => console.log(error))
           }, []);
 
-
-       
-
-           const handleDelete = (e, id) => {
-             fetch('http://localhost:3000/api/v1/books/' + id, {
-               method: 'DELETE',
-             }).then(
-                 setBooks()
-             )
-             console.log(books)
-               alert('Book Deleted')  
-           }
-
-
+    
 
            return (
             <div >
@@ -63,13 +71,15 @@ const Books = () => {
                     <CardGroup>
                  
                 <Link className="nav-links-container" href="" to="/books/new"> Add New Book</Link>
+
+{/*                 
                     {books.filter((book)=> {
                       if (searchGenre == "") {
                         return book
                       }else if (book.genre.toLowerCase().includes(searchGenre.toLowerCase())) {
                         return book
-                      }
-                    }).map((book, index) => {
+                      } */}
+                   {books.map((book, index) => {
                         return (
                     <div className="card" key={book.id}>
                        <Link className="card-title" href={book.title} to={`/books/${book.id}`}>{book.title}  </Link>
@@ -86,13 +96,15 @@ const Books = () => {
                           <small className="text-muted">{book.author} <br/> </small>
                           <small className="text-muted"> {book.genre} </small>
                         </Card.Footer>
-                        <button className="card-button" type="button"onClick={(e) => handleDelete(e, book.id)} >
-                                    Delete Book
-                              </button> 
+                
+
+                           
                        </Card>    
                     </div> 
                             );
-                      })} 
+                      })
+                      
+                      } 
 
                     </CardGroup>
                     </Col>

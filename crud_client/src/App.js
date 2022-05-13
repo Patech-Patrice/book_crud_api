@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import Books from './components/books/books.js';
 import Book from './components/book/book.js';
 
@@ -42,7 +42,7 @@ const App = () => {
                 <Route path='/books/update/:id' element={<UpdateBook />} />
                 <Route path="/books" element={<Books />} />  
                 <Route path="/books/:id" element={<Book />} />
-                <Route path="/books/delete:id" element={<Book />} />
+                <Route path="/books/:id" element={<Navigate to='/books' />} />
             </Routes>
     </div>
   );

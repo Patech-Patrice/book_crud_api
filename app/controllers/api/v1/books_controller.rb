@@ -1,42 +1,53 @@
 module Api
   module V1
     class BooksController < ApplicationController
+    before_action :set_book,  only: [ :edit, :update, :destroy]
+    before_action :find_book, only: [ :edit, :update, :destroy]
 
 
     
 
     # GET /books
+    # def index
+    #   @books = Book.all
+    #     render json: @books 
+    # end
     def index
-      @books = Book.all
-
-        render json: @books 
-
+      render json: Book.all
     end
 
   
     # GET /books#new  
       def new
-        @book = Book.new
-        
+        book = Book.new
       end
  
 
     # GET /books/:id
+      # def show
+      #   @book = Book.find_by(id: params[:id])
+      #    render json: @book
+      # end 
       def show
-        # @book = Book.find(params[:id])
-        @book = Book.find_by(id: params[:id])
-
-         render json: @book
+        book = Book.find_by(id: params[:id])
+         render json: book
       end 
 
     # POST /books
+    # def create
+    #   @book = Book.new(book_params)
+    #   if @book.save
+    #     render json: @book, status: :created
+    #   else
+    #     render json: @book, status: :unprocessable_entity
+    #   end
+    # end
     def create
-      @book = Book.new(book_params)
-
-      if @book.save
-        render json: @book, status: :created
+      book = Book.new(book_params)
+      if book.save
+        render json: book, status: :created
       else
-        render json: @book, status: :unprocessable_entity
+        render json: book, status: :unprocessable_entity
       end
     end
 
@@ -54,26 +65,40 @@ module Api
     end
 
     def edit
-      @book = Book.find(params[:id])
-      render json: @book
+      book = Book.find(params[:id])
+      render json: book
     end
 
    
 
     # DELETE /books/1
     def destroy
-      @book = Book.find(params[:id]).destroy!
-        head :no_content, status: :ok
-     
+      book = Book.find(params[:id]).destroy!
+    #   if book.destroy!
+         head :no_content, status: :ok
+    #   else
+    #     render json: book.errors, status: :unprocessable_entity
+    # end
   end
+
 
     private
       # Use callbacks to share common setup or constraints between actions.
+      def set_book
+        book = Book.find_by_id params[:id]
+      end
+
+   
+
+      def find_book
+        book = Book.find_by_id params[:id]
+      end
+
    
       # Only allow a list of trusted parameters through.
       def book_params
         
-          params.require(:book).permit(:id, :title, :genre, :body, :image_url, :author)
+          params.require(:book).permit(:title, :genre, :body, :image_url, :author)
       end
 
  

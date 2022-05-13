@@ -28,8 +28,6 @@ const Book = (props) => {
       try{
         const response = await fetch(url);
         const book = await response.json();
-          // console.log(book);
-          // console.log(book.id);
       
         setTitle(book.title)
         setBody(book.body)
@@ -49,17 +47,26 @@ const Book = (props) => {
 }, [id]);
 
 
-
-const handleDelete= (e,id) => {
+const handleDelete = id => {
+  console.log(id);
   fetch( `http://localhost:3000/api/v1/books/`+ id, {
     method: 'DELETE'
   }).then(() => {
-    setBook();
+    // setBook();
      console.log();
   }).catch(err => {
     console.error(err)
   });
 }
+
+
+
+
+
+
+
+
+
 
 
 // const handleDelete = (e, id) => {
@@ -75,7 +82,7 @@ const handleDelete= (e,id) => {
 
 const deleteBook = (id) => {
   console.log(id);
-  alert('Delete Pressed')
+  alert(id);
 }
 
 
@@ -96,10 +103,12 @@ return (
                               <Card.Subtitle className="mb-2 text-muted">{author}</Card.Subtitle>
                              <Card.Text>
                                 {body}
-                             
+                                {console.log(book.id)}
+                             {console.log("From React code: book.id= " + book.id)}
                               </Card.Text>
                         <Card.Link href={`/books/update/` + id }> Edit Book</Card.Link>
-                        <button className="card-button" type="button"onClick={(e) => handleDelete(e, book.id, navigate)} >
+
+                        <button className="card-button" type="button"onClick={() => handleDelete(book.id)} >
                                     Delete Book
                               </button> 
                               <button onClick={()=> deleteBook(book.id)}>Delete</button>

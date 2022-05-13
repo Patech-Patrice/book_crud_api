@@ -40,6 +40,7 @@ const NewBook = () => {
         }).then((response) => {return response.json()})
         .then((book)=>{
            setBookInput(book)
+           alert('Book successfully created!');
          // console.log(book)
           navigate('/books', {state: title, 
             genre, 

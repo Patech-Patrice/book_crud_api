@@ -15,7 +15,9 @@ const Books = () => {
 
 
   const [books, setBooks] = useState([]);
-  const [searchGenre, setSearchGenre] = useState([]);
+  const [query, setQuery] = useState("");
+  // console.log(query);
+  // console.log(books.filter(book => book.genre.toLowerCase().includes("fa")));
   const navigate = useNavigate();
 
   // const { id } = useParams();
@@ -43,72 +45,51 @@ const Books = () => {
 
 
            return (
-                  <div >
-                        <label htmlFor="search-form">
-                          <input
-                              type="search"
-                              name="search-form"
-                              id="search-form"
-                              className="search-genre"
-                              placeholder="Search by genre..."
-                              onChange={event => {setSearchGenre(event.target.value)}}
-                            />
-                            <br />
-                          </label>
-                          <br />
-                          <Row xs={1} md={2} className="g-4">
-                            <Col>
-                            <br/><br />
-                          <CardGroup>
-                              <Link className="nav-links-container" href="" to="/books/new"> Add New Book</Link><br />
-                              <br />
-
-                      {/*                 
-                                          {books.filter((book)=> {
-                                            if (searchGenre == "") {
-                                              return book
-                                            }else if (book.genre.toLowerCase().includes(searchGenre.toLowerCase())) {
-                                              return book
-                                            } */}
-
-
-                                    {books.map((book, index) => {
-                                          return (
-                                      <div className="card" key={book.id}>
-                                        <Link className="card-title" href={book.title} to={`/books/${book.id}`}>{book.title}  </Link>
-                                        <Card>
-                                              <Card.Img variant="top" src={book.image_url}/>
-                                                <Card.Body>    
-                                                  <Card.Title>{book.author}</Card.Title>
-                                                <Card.Text>
-                                                {book.body}
-                                                </Card.Text>       
-                                                </Card.Body>
-                                                <Card.Footer>
-                                                <small className="text-muted"> {book.genre} </small>
-                                                <br/>
-                                                {/* <Button to={`/books`} onClick={() => {handleDelete(book.id)}}> Delete Book </Button> */}
-                                                <Link to={`/home`} onClick={() => {handleDelete(book.id)}}> Delete Book </Link>
-                                              </Card.Footer>
-
-                                            
-                                             
-                                        
-
-
-
-
-                                        </Card> 
-                                        <br />
-                                        <br />   
-                                      </div> 
-                                              );
-                                          })
-                                      } 
-                                      </CardGroup>
-                                      </Col>
-                                      </Row>
-                                    </div>
+        
+                <div >
+                     <input
+                        type="search"
+                        placeholder="Search by genre..."
+                        onChange={event => {setQuery(event.target.value)}} />
+                          <br /> <br />
+                      <Row xs={1} md={2} className="g-4">
+                          <Col>
+                             <br/><br />
+                             <CardGroup>    
+                               <Link className="nav-links-container" href="" to="/books/new"> Add New Book</Link>
+                                 <br />
+                                    {books.filter((book)=> {
+                                      if (query == "") {
+                                        return book
+                                      }else if (book.genre.toLowerCase().includes(query.toLowerCase())) {
+                                        return book
+                                       }
+                                     }).map((book, index) => {
+                                        return (
+                                          <div className="card" key={book.id}>
+                                       
+                                            <Link className="card-title" href={book.title} to={`/books/${book.id}`}>{book.title}  </Link>
+                                            <br/>
+                                              <Card>
+                                                <Card.Img variant="top" src={book.image_url}/>
+                                                      <Card.Body>    
+                                                          <Card.Title>{book.author}</Card.Title>
+                                                            <Card.Text>{book.body} </Card.Text>       
+                                                            </Card.Body>
+                                                          <Card.Footer>
+                                                            <small className="text-muted"> {book.genre} </small>
+                                                            <br/>
+                                                          <Link to={`/`} onClick={() => {handleDelete(book.id)}}> Delete Book </Link>
+                                                          </Card.Footer>
+                                                </Card> 
+                                                  <br /><br />     
+                                                </div>
+                                                     );
+                                                  })} 
+                                            </CardGroup>
+                                       </Col>
+                                 </Row> 
+                        </div>
 
                             );
                         }

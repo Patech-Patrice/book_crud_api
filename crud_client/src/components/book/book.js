@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 
@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 
 const Book = (props) => {
 
-  const [book, setBook] = useState([]);
+
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [genre, setGenre] = useState("");
@@ -16,7 +16,7 @@ const Book = (props) => {
 
 
   const { id } = useParams();
-  const navigate = useNavigate();
+
 
   
 

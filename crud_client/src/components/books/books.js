@@ -1,11 +1,10 @@
-import { useState, useEffect, useParams } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -59,7 +58,7 @@ const Books = () => {
                                <Link className="nav-links-container" href="" to="/books/new"> Add New Book</Link>
                                  <br />
                                     {books.filter((book)=> {
-                                      if (query == "") {
+                                      if (query === "") {
                                         return book
                                       }else if (book.genre.toLowerCase().includes(query.toLowerCase())) {
                                         return book

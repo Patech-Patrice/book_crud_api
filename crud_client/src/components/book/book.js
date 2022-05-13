@@ -46,13 +46,14 @@ const Book = (props) => {
 
 return (
 
-                 <div >     
+                 <div >  
+                   <br/>   
                      <Card style={{ width: '80rem' }}>
                         <Card.Img variant="top" src={img} />
                             <Card.Body>
-                              <Card.Title style={{height: '', width: ''}}>{title}</Card.Title>
-                              <Card.Subtitle className="mb-2 text-muted">{genre}</Card.Subtitle>
-                              <Card.Subtitle className="mb-2 text-muted">{author}</Card.Subtitle>
+                              <Card.Title style={{color: 'black'}}>{title}</Card.Title><br/>
+                              <Card.Subtitle  style={{color: 'red'}}>{genre}</Card.Subtitle>
+                              <Card.Subtitle style={{color: 'green'}}>{author}</Card.Subtitle>
                               <Card.Text>{body}</Card.Text>
                               <Card.Link href={`/books/update/` + id }> Edit Book</Card.Link> 
                             </Card.Body>

@@ -28,7 +28,6 @@ const Books = () => {
 
 
           const handleDelete = (id) => {
-            console.log();
             fetch( `http://localhost:3000/api/v1/books/` + id, {
               method: 'DELETE'
             }).then(() => {
@@ -38,6 +37,9 @@ const Books = () => {
               console.error(err)
             });
           }
+
+
+
 
 
            return (
@@ -85,8 +87,17 @@ const Books = () => {
                                                 <Card.Footer>
                                                 <small className="text-muted"> {book.genre} </small>
                                                 <br/>
-                                                <Button to={`/books`} onClick={() => {handleDelete(book.id)}}> Delete Book </Button>
+                                                {/* <Button to={`/books`} onClick={() => {handleDelete(book.id)}}> Delete Book </Button> */}
+                                                <Link to={`/home`} onClick={() => {handleDelete(book.id)}}> Delete Book </Link>
                                               </Card.Footer>
+
+                                            
+                                             
+                                        
+
+
+
+
                                         </Card> 
                                         <br />
                                         <br />   

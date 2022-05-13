@@ -32,8 +32,6 @@ const UpdateBook = (callback) => {
         }).then(response => {
           setEditBookInput(editBookInput);
           navigate('/books')
-          // navigate('/books', {state: title, genre, image_url, body, author })
-          // do something if the server responds positively
     }).catch(err => {
       // do something if sending data went wrong
     })

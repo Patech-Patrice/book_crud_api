@@ -72,7 +72,7 @@ const Books = () => {
                                               <Card>
                                                 <Card.Img variant="top" src={book.image_url}/>
                                                       <Card.Body>    
-                                                          <Card.Title>{book.author}</Card.Title>
+                                                          <Card.Title>Author: {book.author}</Card.Title>
                                                             <Card.Text>{book.body} </Card.Text>       
                                                             </Card.Body>
                                                           <Card.Footer>

@@ -6,6 +6,9 @@ import Home from './components/home/home.js';
 import UpdateBook from './components/update-book/update-book.js';
 import NewBook from './components/new-book/new-book.js';
 import Movies from './routes/movies/movies.component.js'
+import Movie from './routes/movie/movie.component.js'
+import NewMovie from './routes/new-movie/new-movie.component.js';
+import { useState } from 'react';
 
 
 
@@ -29,11 +32,12 @@ import Movies from './routes/movies/movies.component.js'
 const App = () => {
 
 
+
   return (
     <div className="App">
-      <h2>Welcome to the Book Logger App</h2>
+      <h2>Welcome to the Book and Movie Logger App</h2>
       <Link to="/books">View Books</Link> <Link to="movies">View Movies</Link>
-      {/* <Movies /> */}
+      {/* <Movies movies={movies} /> */}
 
  
    
@@ -43,7 +47,9 @@ const App = () => {
                 <Route path='/books/new' element={<NewBook/>} />
                 <Route path='/books/update/:id' element={<UpdateBook />} />
                 <Route path="/books" element={<Books />} />  
-                <Route path="movies" element={<Movies />} />  
+                <Route path="movies" element={<Movies />} /> 
+                 <Route path="movies/:id" element={<Movie />} /> 
+                 <Route path='/movies/new' element={<NewMovie/>} />  
                 <Route path="/books/:id" element={<Book />} />
                 <Route path="/books/:id" element={<Navigate to='/books' />} />
             </Routes>

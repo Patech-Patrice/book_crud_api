@@ -33,6 +33,7 @@ const Book = (props) => {
         setGenre(book.genre)
         setImg(book.image_url)
         setAuthor(book.author)
+        console.log(book.id);
         
           }catch (error){
             alert("error", error);
@@ -55,7 +56,9 @@ return (
                               <Card.Subtitle  style={{color: 'red'}}>{genre}</Card.Subtitle>
                               <Card.Subtitle style={{color: 'green'}}>{author}</Card.Subtitle>
                               <Card.Text>{body}</Card.Text>
-                              <Card.Link href={`/books/update/` + id }> Edit Book</Card.Link> 
+                         
+                              <Card.Link href={`/books/update/` + id }> Edit Book</Card.Link>
+                              
                             </Card.Body>
                     </Card>
                 </div>

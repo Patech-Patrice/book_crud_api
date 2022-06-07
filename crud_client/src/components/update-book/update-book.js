@@ -1,11 +1,14 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import AuthContext from '../../store/auth-context';
 
 
 
 const UpdateBook = (callback) => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const authCtx = useContext(AuthContext);
 
   const [editBookInput, setEditBookInput] = useState({
     book: {

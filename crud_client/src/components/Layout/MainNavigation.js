@@ -37,21 +37,7 @@ const MainNavigation = () => {
                 <Link to='/books'>Books</Link>
               </li>
            )}
-                 {/* {isLoggedIn && (
-              <li>
-                <Link to='/books/new'>New Book</Link>
-              </li>
-           )} */}
-                 {/* {isLoggedIn && (
-              <li>
-                <Link to='/books/update/:id'>Update Book</Link>
-              </li>
-           )} */}
-                 {/* {isLoggedIn && (
-              <li>
-                <Link to='/books/:id'>Book ID Page</Link>
-              </li>
-           )} */}
+             
 
           {isLoggedIn && (
           <li>

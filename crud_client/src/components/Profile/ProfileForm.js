@@ -9,6 +9,8 @@ const ProfileForm = () => {
   //grabs token
   const authCtx = useContext(AuthContext);
 
+  console.log(authCtx.token);
+
   const navigate = useNavigate();
   
   const submitHandler = (event) => {
@@ -30,6 +32,7 @@ const ProfileForm = () => {
       //succeeds
       alert('Password successfully changed!');
       navigate('/')
+      console.log(authCtx.token);
 
     })
   };

@@ -65,7 +65,7 @@ const AuthForm = () => {
          //set token with auth context
         authCtx.login(data.idToken, expirationTime.toISOString());
         navigate('/');
-        console.log(data);
+        console.log(data.idToken);
       }).catch(err => {
         alert(err.message);
       });

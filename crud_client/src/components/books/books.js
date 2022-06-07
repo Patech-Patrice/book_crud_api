@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
@@ -6,6 +6,8 @@ import CardGroup from 'react-bootstrap/CardGroup';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../store/auth-context';
+
 
 
 const Books = () => {
@@ -15,6 +17,8 @@ const Books = () => {
 
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState("");
+
+  const currentUser = useContext(AuthContext);
   // console.log(query);
   // console.log(books.filter(book => book.genre.toLowerCase().includes("fa")));
   const navigate = useNavigate();
@@ -42,7 +46,8 @@ const Books = () => {
 
 
 
-
+          
+        
            return (
         
                 <div >
@@ -78,7 +83,10 @@ const Books = () => {
                                                           <Card.Footer>
                                                             <small className="text-muted"> {book.genre} </small>
                                                             <br/>
+                                                            { currentUser == book.id &&  (
                                                           <Link to={`/`} onClick={() => {handleDelete(book.id)}}> Delete Book </Link>
+                                                           )}
+                        
                                                           </Card.Footer>
                                                 </Card> 
                                                   <br /><br />     

@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import {  useNavigate } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import FormGroup from 'react-bootstrap/FormGroup';
 
 
 
@@ -41,7 +44,6 @@ const NewBook = () => {
         .then((book)=>{
            setBookInput(book)
            alert('Book successfully created!');
-         // console.log(book)
           navigate('/books', {state: title, 
             genre, 
             image_url, 
@@ -51,7 +53,6 @@ const NewBook = () => {
       }
 
       const handleChange = event => {
-        // console.log(event.target.name);
            event.preventDefault();
              setBookInput(prevState => {
                return {
@@ -68,29 +69,67 @@ const NewBook = () => {
 
 
     return (
-      <div>
-     
-        <h4> Create a New Book:</h4>
-        <form  onSubmit={handleSubmit}>
-      Title: <textarea type='text' rows="5" cols="30" name="title" value={title} onChange={handleChange} />
-      <br />
-      <br />
-          Genre: <textarea rows="2" cols="30" name="genre" value={genre} onChange={handleChange} /> 
-      <br />
-      <br />
-      Cover Image URL: <textarea rows="6" cols="30" name="image_url" value={image_url} onChange={handleChange} />
-      <br />
-      <br />
-      Description: <textarea name="body" rows="6" cols="50" defaultValue={body} onChange={handleChange} />  
-      <br />
-      <br />
-      Author: <textarea  rows="2" cols="30" name="author" value={author} onChange={handleChange} />
-      <br />
-      <br />
-      <button onChange={handleSubmit} type="submit">Create Book</button>
-      </form>
-        </div>
-    );
-  }
+ 
+
+      <div className = "form-box">
+          <h4> Create a New Book:</h4>
+              <form onSubmit = { handleSubmit }>
+                 <div className = "field1">
+                          <input 
+                              type ="text" 
+                              className = "form-input"
+                              name ="title" 
+                              placeholder="Book Title"
+                              onChange ={handleChange} 
+                              value = {title}
+                          />
+
+
+                          <input 
+                              type ="tel" 
+                              className = "form-input"
+                              name ="genre" 
+                              placeholder="Book Genre"
+                              onChange ={handleChange} 
+                              value = {genre}
+                          />
+
+                          <input 
+                              className = "form-input"
+                              name ="image_url" 
+                              placeholder="Book Cover Image URL"
+                              onChange ={handleChange} 
+                              value = {image_url}
+                          />
+
+                          <textarea 
+                              type ="text" 
+                              className = "form-input"
+                              name ="body" 
+                              placeholder="Book Summary"
+                              onChange ={handleChange} 
+                              defaultValue={body}
+                          />
+                  
+                          <input 
+                              type ="text" 
+                              className = "form-input"
+                              name ="author" 
+                              placeholder="Author"
+                              onChange ={handleChange} 
+                              value = {author}
+                          />
+                          </div>
+
+                          <button 
+                          type = "submit"
+                          id= "submitBtn"
+                          className = "submitBtn"
+                          onClick={handleSubmit} > Create Book </button>
+                      </form>
+                  </div>
+
+                 );
+             }
 
   export default NewBook;

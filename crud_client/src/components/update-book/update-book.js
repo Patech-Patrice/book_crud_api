@@ -29,17 +29,16 @@ const UpdateBook = (callback) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/api/v1/books/' + id, {
-          body: JSON.stringify(editBookInput),
-          method: 'POST',
-        }).then(response => {
-          setEditBookInput(editBookInput);
-          navigate('/books')
-    }).catch(err => {
-      // do something if sending data went wrong
-    })
-        
-    }
+           fetch('http://localhost:3000/api/v1/books/' + id, {
+             body: JSON.stringify(editBookInput),
+             method: 'POST',
+             }).then(response => {
+            setEditBookInput(editBookInput);
+            navigate('/books')
+            }).catch(err => {
+            alert('Something went wrong. Please try again.')
+          })
+       }
 
 
          const handleEdit = (event, id) => {
@@ -58,54 +57,89 @@ const UpdateBook = (callback) => {
            }
 
 
-  useEffect(() => {
-    const url = "http://localhost:3000/api/v1/books/" + id
-    const fetchData = async() => {
-      try{
-        const response = await fetch(url);
-        const book = await response.json();
-        console.log(book);
-        setEditBookInput(book)
-          }catch (error){
-            alert("error", error);
-          }      
-    };
-      fetchData();
-      console.log('');
-}, [id]);
+          useEffect(() => {
+                const url = "http://localhost:3000/api/v1/books/" + id
+                const fetchData = async() => {
+                  try{
+                    const response = await fetch(url);
+                    const book = await response.json();
+                    console.log(book);
+                    setEditBookInput(book)
+                      }catch (error){
+                        alert("error", error);
+                      }      
+                    };
+                      fetchData();
+                      console.log('');
+                }, [id]);
 
 
-    return (
-      <div className="App">
-          <h2> Edit Book Form: </h2>
-          <form   onSubmit={handleSubmit}>
-          Title: <input type='text' name="title" value={editBookInput.title ?? ""} onChange={handleChange} />
-          <br />
-          <br />
-          Genre: <input name="genre" value={editBookInput.genre ?? ""} onChange={handleChange} />
-          <br />
-          <br />
-          Cover Image URL: <input name="image_url"  value={editBookInput.image_url ?? ""} onChange={handleChange} />
-          <br />
-          <br />
-          <br />
-          Description: <textarea name="body" rows="4" cols="50"  value={editBookInput.body ?? ""} onChange={handleChange} />  
-          <br />
-          <br />
-          Author: <input name="author" value={editBookInput.author ?? ""} onChange={handleChange} />
-          <br />
-          <br />
-          {/* <button className="update" type="button"onClick={handleEdit} >
-                      Update Book
-                  </button> */}
-          
-             <button className="update" type="button"onClick={(e) => handleEdit(e, editBookInput.id)} >
-                      Update Book
-                  </button>
-          </form>
-    </div>
-    );
-  };
+           return (
+
+               <div className = "form-box">
+                            <h4> Update Book</h4>
+                                <form onSubmit = { handleSubmit }>
+                                  <div className = "field1">
+                                  <label> Book Title: </label>
+                                            <input 
+                                                type ="text" 
+                                                className = "form-input"
+                                                name ="title" 
+                                                placeholder="Book Title"
+                                                onChange ={handleChange} 
+                                                value={editBookInput.title ?? ""} 
+                                            />
+
+                                        <label> Book Genre: </label>
+                                            <input 
+                                                type ="tel" 
+                                                className = "form-input"
+                                                name ="genre" 
+                                                placeholder="Book Genre"
+                                                onChange ={handleChange} 
+                                                value={editBookInput.genre ?? ""}
+                                            />
+                                          <label> Book Cover Image URL </label>
+                                            <input 
+                                                className = "form-input"
+                                                name ="image_url" 
+                                                placeholder="Book Cover Image URL"
+                                                onChange ={handleChange} 
+                                                value={editBookInput.image_url ?? ""} 
+                                            />
+                                        <label> Book Summary: </label>      
+                                            <textarea 
+                                                type ="text" 
+                                                className = "form-input"
+                                                name ="body" 
+                                                placeholder="Book Summary"
+                                                onChange ={handleChange} 
+                                                value={editBookInput.body ?? ""}
+                                            />
+                                    <label> Book Author: </label>
+                                            <input 
+                                                type ="text" 
+                                                className = "form-input"
+                                                name ="author" 
+                                                placeholder="Author"
+                                                onChange ={handleChange} 
+                                                value={editBookInput.author ?? ""}
+                                            />
+                                            </div>
+
+                                            <button 
+                                            type = "submit"
+                                            id= "submitBtn"
+                                            className = "submitBtn"
+                                            onClick={(e) => handleEdit(e, editBookInput.id)}> Update Book </button>
+
+
+                                        </form>
+                                    </div>
+
+
+                              );
+                        };
 
   export default UpdateBook;
 

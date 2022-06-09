@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -38,26 +39,27 @@ const Book = (props) => {
           }catch (error){
             alert("error", error);
           }      
-    };
-      fetchData();
-    
-}, [id]);
+            };
+              fetchData();
+            
+        }, [id]);
 
 
 
-return (
+    return (
 
                  <div >  
                    <br/>   
-                     <Card style={{ width: '80rem' }}>
-                        <Card.Img variant="top" src={img} />
+                     <Card style={{ width: '40rem'}}>
+                     
+                        <Card.Img variant="top" style={{ width: '20rem', alignSelf: 'center' }} src={img}/>
                             <Card.Body>
                               <Card.Title style={{color: 'black'}}>{title}</Card.Title><br/>
                               <Card.Subtitle  style={{color: 'red'}}>{genre}</Card.Subtitle>
                               <Card.Subtitle style={{color: 'green'}}>{author}</Card.Subtitle>
                               <Card.Text>{body}</Card.Text>
                          
-                              <Card.Link href={`/books/update/` + id }> Edit Book</Card.Link>
+                              <Button href={`/books/update/` + id }> Edit Book</Button>
                               
                             </Card.Body>
                     </Card>

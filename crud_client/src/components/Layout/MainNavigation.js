@@ -17,7 +17,7 @@ const MainNavigation = () => {
   return (
     <header className={classes.header}>
       <Link to='/'>
-        <div className={classes.logo}>Book CRUD App</div>
+        <div className={classes.logo}>Book Logger </div>
       </Link>
       <nav>
         <ul>

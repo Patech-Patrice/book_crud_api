@@ -2,7 +2,6 @@ import './App.css';
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import Books from './components/books/books.js';
 import Book from './components/book/book.js';
-import Home from './components/home/home.js';
 import UpdateBook from './components/update-book/update-book.js';
 import NewBook from './components/new-book/new-book.js';
 import AuthContext from './store/auth-context';

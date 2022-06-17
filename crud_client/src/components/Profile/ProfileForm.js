@@ -10,6 +10,7 @@ const ProfileForm = () => {
   const authCtx = useContext(AuthContext);
 
   console.log(authCtx.token);
+ 
 
   const navigate = useNavigate();
   
@@ -32,7 +33,7 @@ const ProfileForm = () => {
       //succeeds
       alert('Password successfully changed!');
       navigate('/')
-      console.log(authCtx.token);
+      console.log(authCtx.email);
 
     })
   };

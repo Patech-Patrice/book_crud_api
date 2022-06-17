@@ -64,8 +64,7 @@ const AuthForm = () => {
         const expirationTime = new Date(new Date().getTime() + (+data.expiresIn * 1000));
          //set token with auth context
         authCtx.login(data.idToken, expirationTime.toISOString());
-        navigate('/');
-        console.log(data.idToken);
+        navigate('/books');
       }).catch(err => {
         alert(err.message);
       });

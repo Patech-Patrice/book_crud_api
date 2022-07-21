@@ -10,7 +10,7 @@ class UserProfile extends Component {
         <div className="row">
             <div className="card-body">            
                 <div>
-                   <img src={imgHome} className="card-img-top"/>
+                   <img src={imgHome} alt="home" className="card-img-top"/>
                 </div>
              <section className={classes.profile}>
                <ProfileForm />

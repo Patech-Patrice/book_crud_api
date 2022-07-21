@@ -1,13 +1,11 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
-import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
 import { useNavigate } from 'react-router-dom';
-import AuthContext from '../../store/auth-context';
+
 
 
 
@@ -19,7 +17,7 @@ const Books = () => {
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState("");
 
-  const currentUser = useContext(AuthContext);
+
 
   const navigate = useNavigate();
 

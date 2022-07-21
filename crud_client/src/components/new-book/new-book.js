@@ -1,10 +1,5 @@
 import React, {useState} from 'react';
 import {  useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import FormGroup from 'react-bootstrap/FormGroup';
-
-
 
 const NewBook = () => {
 
@@ -21,7 +16,7 @@ const NewBook = () => {
 
       const navigate = useNavigate();
 
-    //turns book into an object
+    //turns book into an object to be destructured 
       const {
         title,
         body,

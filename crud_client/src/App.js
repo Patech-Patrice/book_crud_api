@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Books from './components/books/books.js';
 import Book from './components/book/book.js';
 import UpdateBook from './components/update-book/update-book.js';
@@ -11,7 +11,7 @@ import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
 
 
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 
 
 

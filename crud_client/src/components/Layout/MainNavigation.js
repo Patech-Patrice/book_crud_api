@@ -16,9 +16,10 @@ const MainNavigation = () => {
  const isLoggedIn = authCtx.isLoggedIn;
   return (
     <header className={classes.header}>
-      <Link to='/'>
+      {/* <Link to='/'>
         <div className={classes.logo}>Book Logger </div>
-      </Link>
+      </Link> */}
+      <div className={classes.logo}>Book Logger </div>
       <nav>
         <ul>
             {!isLoggedIn && ( 

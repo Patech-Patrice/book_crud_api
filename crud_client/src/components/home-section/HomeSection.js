@@ -1,5 +1,6 @@
 import React from 'react';
-import bookVideo from '../../assets/video/bookVideo.mp4';
+// import bookVideo from '../../assets/video/bookVideo.mp4';
+import BGVideo from './../bg-video/BGVideo.js'
 import './../../components/home-section/home-section.styles.scss'
 import '../../App.css';
 
@@ -8,11 +9,16 @@ const HomeSection = () => {
     <div className='home-container'>
 
 
-   <video autoPlay loop muted >
-      <source src={bookVideo} type="video/mp4"/>
-     </video>
-   
-        {/* <video src={bookVideo} autoPlay loop muted /> */}
+
+      <BGVideo 
+    autoPlay
+    loop
+    playsInline
+    muted 
+    src="../../assetts/videos/bookVideo.mp4" 
+    type="video/mp4" 
+ />
+       
         <div>
           <section>
         <h1 style={{color: 'purple'}}>Welcome to Book Logger</h1><br/>

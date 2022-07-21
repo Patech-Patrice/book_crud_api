@@ -48,7 +48,7 @@ const AuthForm = () => {
         } else {
          return res.json().then(data => {
             //show error modal or message
-            let errorMessage = 'Authentication failed!';
+            let errorMessage = 'Authentication failed! Password must be at least 6 characters and include numbers';
             // if (data && data.error && data.error.message) {
             //   errorMessage = data.error.message;
             //   console.log(data);

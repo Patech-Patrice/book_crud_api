@@ -10,7 +10,7 @@ const BGVideo = () => {
            <source src={bookVideo} type="video/mp4" />
          </video> */}
 
-<video autoPlay loop muted="true" >
+<video autoPlay loop  >
       <source src={bookVideo} type="video/mp4"/>
      </video>
         <div>

@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Books = () => {
 
-  const backend_url = 'http://localhost:3000/api/v1/books'
+  const backend_url = 'https://hidden-waters-38928.herokuapp.com"'
 
 
   const [books, setBooks] = useState([]);
@@ -31,7 +31,7 @@ const Books = () => {
 
 
           const handleDelete = (id) => {
-            fetch( `http://localhost:3000/api/v1/books/` + id, {
+            fetch( `https://hidden-waters-38928.herokuapp.com` + id, {
               method: 'DELETE'
             }).then(() => {
               alert('Book deleted!');

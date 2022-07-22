@@ -22,8 +22,9 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm build && npm deploy && echo 'Client built!'",
+    "build": "cd client && npm install && npm build && cd ..",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -47,5 +48,12 @@
   },
   "overrides": {
     "autoprefixer": "10.4.5"
+  },
+  "engines": {
+    "node": "18.3.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
+
 }

@@ -29,7 +29,8 @@ const UpdateBook = (callback) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-           fetch('http://localhost:3000/api/v1/books/' + id, {
+          //  fetch('http://localhost:3000/api/v1/books/' + id, {
+            fetch('https://hidden-waters-38928.herokuapp.com' + id, {
              body: JSON.stringify(editBookInput),
              method: 'POST',
              }).then(response => {
@@ -42,7 +43,7 @@ const UpdateBook = (callback) => {
 
 
          const handleEdit = (event, id) => {
-          fetch('http://localhost:3000/api/v1/books/' + editBookInput.id, {
+          fetch('https://hidden-waters-38928.herokuapp.com' + editBookInput.id, {
                 method: 'PUT',
                 headers: {
                   'Content-Type': 'application/json'
@@ -58,7 +59,7 @@ const UpdateBook = (callback) => {
 
 
           useEffect(() => {
-                const url = "http://localhost:3000/api/v1/books/" + id
+                const url = "https://hidden-waters-38928.herokuapp.com" + id
                 const fetchData = async() => {
                   try{
                     const response = await fetch(url);

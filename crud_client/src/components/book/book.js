@@ -22,7 +22,9 @@ const Book = (props) => {
   
 
   useEffect(() => {
-    const url = "http://localhost:3000/api/v1/books/" + id
+    // const url = "http://localhost:3000/api/v1/books/" + id
+    const url = "https://hidden-waters-38928.herokuapp.com" + id
+   
 
     const fetchData = async() => {
       try{

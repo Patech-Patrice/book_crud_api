@@ -28,7 +28,8 @@ const NewBook = () => {
       const handleSubmit = event => {
         event.preventDefault();
        const body = JSON.stringify(bookInput.book);
-        fetch('http://localhost:3000/api/v1/books', {
+        // fetch('http://localhost:3000/api/v1/books', {
+          fetch('https://hidden-waters-38928.herokuapp.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

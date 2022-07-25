@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "cp -a client/build/. public/",
+    "deploy": "gh-pages -d build",
     "postinstall": "npm build && npm deploy && echo 'Client built!'",
     "build": "cd client && npm install && npm build && cd ..",
     "test": "react-scripts test",

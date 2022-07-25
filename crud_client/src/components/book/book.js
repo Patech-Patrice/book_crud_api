@@ -23,7 +23,7 @@ const Book = (props) => {
 
   useEffect(() => {
     // const url = "http://localhost:3000/api/v1/books/" + id
-    const url = "https://hidden-waters-38928.herokuapp.com" + id
+    const url = "https://hidden-waters-38928.herokuapp.com/api/v1/books/" + id
    
 
     const fetchData = async() => {
@@ -61,7 +61,8 @@ const Book = (props) => {
                               <Card.Subtitle style={{color: 'green'}}>{author}</Card.Subtitle>
                               <Card.Text>{body}</Card.Text>
                          
-                              <Button href={`/books/update/` + id }> Edit Book</Button>
+                              <Button href={`api/v1/books/update/` + id }> Edit Book</Button>
+                            
                               
                             </Card.Body>
                     </Card>

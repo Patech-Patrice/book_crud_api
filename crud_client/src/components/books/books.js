@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Books = () => {
 
-  const backend_url = 'https://hidden-waters-38928.herokuapp.com"'
+  const backend_url = 'https://hidden-waters-38928.herokuapp.com/api/v1/books'
 
 
   const [books, setBooks] = useState([]);
@@ -31,7 +31,7 @@ const Books = () => {
 
 
           const handleDelete = (id) => {
-            fetch( `https://hidden-waters-38928.herokuapp.com` + id, {
+            fetch( `https://hidden-waters-38928.herokuapp.com/api/v1/books` + id, {
               method: 'DELETE'
             }).then(() => {
               alert('Book deleted!');
@@ -55,6 +55,7 @@ const Books = () => {
                            <br /> <br />
       
                            <Button href="/books/new">Add New Book</Button> 
+                          
                               <CardGroup>
                                    {books.filter((book)=> {
                                       if (query === "") {

@@ -54,7 +54,8 @@ const Books = () => {
                          onChange={event => {setQuery(event.target.value)}} />
                            <br /> <br />
       
-                           <Button href="/books/new">Add New Book</Button> 
+                           <Button href={`/books/new/`}>Add New Book</Button> 
+                         
                           
                               <CardGroup>
                                    {books.filter((book)=> {

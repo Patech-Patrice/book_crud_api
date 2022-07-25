@@ -61,7 +61,7 @@ const Book = (props) => {
                               <Card.Subtitle style={{color: 'green'}}>{author}</Card.Subtitle>
                               <Card.Text>{body}</Card.Text>
                          
-                              <Button href={`api/v1/books/update/` + id }> Edit Book</Button>
+                              <Button href={`/books/update/` + id }> Edit Book</Button>
                             
                               
                             </Card.Body>

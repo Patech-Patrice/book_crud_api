@@ -14,9 +14,8 @@ const HomeSection = () => {
     autoPlay
     loop
     playsInline
-    muted 
-    src="../../assetts/videos/bookVideo.mp4" 
-    type="video/mp4" 
+    
+    
  />
        
         <div>

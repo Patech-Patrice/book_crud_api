@@ -35,8 +35,8 @@ const authCtx = useContext(AuthContext);
                 <Route path="/books" element={<Books />} />
               )}
            
-                <Route path='/books/new' element={<NewBook/>} />
-                <Route path='/books/update/:id' element={<UpdateBook />} />
+                <Route path="/books/new" element={<NewBook/>} />
+                <Route path="/books/update/:id" element={<UpdateBook />} />
                 <Route path="/books/:id" element={<Book />} />
                 <Route path="*" element={<Navigate to="/" replace />}
     />

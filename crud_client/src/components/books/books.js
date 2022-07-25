@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Books = () => {
 
-  const backend_url = 'https://hidden-waters-38928.herokuapp.com/api/v1/books'
+  const backend_url = 'https://hidden-waters-38928.herokuapp.com/api/v1/books/'
 
 
   const [books, setBooks] = useState([]);

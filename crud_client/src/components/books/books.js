@@ -55,6 +55,7 @@ const Books = () => {
                            <br /> <br />
       
                            <Button href={`/books/new/`}>Add New Book</Button> 
+                           <Link to='/books'>Books</Link>
                          
                           
                               <CardGroup>

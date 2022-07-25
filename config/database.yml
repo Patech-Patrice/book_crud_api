@@ -54,6 +54,7 @@ test:
 
 production:
   <<: *default
-  database: book_crud_api_production
-  username: book_love
+  database: hidden-waters
+  username: patech_patrice
   password: <%= ENV['BOOK_LOVE_DATABASE_PASSWORD'] %>
+  adapter: 'postgresql'

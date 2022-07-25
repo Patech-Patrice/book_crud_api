@@ -32,7 +32,7 @@ const ProfileForm = () => {
     }).then(res => {
       //succeeds
       alert('Password successfully changed!');
-      navigate('/')
+      navigate('/books')
       console.log(authCtx.email);
 
     })

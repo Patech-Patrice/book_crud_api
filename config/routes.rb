@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       # resources :books
- 
-  get 'books', to: 'books#index', as: 'books'    
+
+
+  get '/books', to: 'books#index', as: 'books'    
   get '/books/new', to: 'books#create'
   post '/books', to: 'books#create'
   get 'books/:id', to: 'books#show', as: 'book'
@@ -11,12 +12,14 @@ Rails.application.routes.draw do
   patch 'books/:id/update', to: 'books#update'
   put 'books/:id', to: 'books#update'
   delete '/books/:id', to: 'books#destroy'
+
+
   
  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-    # root "home#index"
+    #  root 'books#index'
   
     end
   end

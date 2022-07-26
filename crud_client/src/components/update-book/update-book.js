@@ -52,8 +52,8 @@ const UpdateBook = (callback) => {
               }).then(response => response.json()).then(book => {
                   setEditBookInput({editBookInput})
               })
-              console.log(editBookInput)
-                alert('Book Updated')
+              // console.log(editBookInput)
+                alert('Book Updated!')
                  navigate('/books') 
            }
 
@@ -64,14 +64,14 @@ const UpdateBook = (callback) => {
                   try{
                     const response = await fetch(url);
                     const book = await response.json();
-                    console.log(book);
+                    // console.log(book);
                     setEditBookInput(book)
                       }catch (error){
                         alert("error", error);
                       }      
                     };
                       fetchData();
-                      console.log('');
+                      // console.log('');
                 }, [id]);
 
 
@@ -128,11 +128,13 @@ const UpdateBook = (callback) => {
                                             />
                                             </div>
 
-                                            <button 
+                                             <button 
                                             type = "submit"
                                             id= "submitBtn"
                                             className = "submitBtn"
-                                            onClick={(e) => handleEdit(e, editBookInput.id)}> Update Book </button>
+                                            onClick={(e) => handleEdit(e, editBookInput.id)}> Update Book </button> 
+
+
 
 
                                         </form>

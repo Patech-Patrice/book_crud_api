@@ -28,9 +28,9 @@ const authCtx = useContext(AuthContext);
               {!authCtx.isLoggedIn && (
               <Route path="/auth" element={<AuthPage />} /> 
               )}
-              { authCtx.isLoggedIn && (
+              {/* { authCtx.isLoggedIn && (
                <Route path="/profile" element={<UserProfile />} />
-              )}
+              )} */}
               { authCtx.isLoggedIn && (
                 <Route path="/books" element={<Books />} />
               )}

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 
 
@@ -36,7 +37,7 @@ const Book = (props) => {
         setGenre(book.genre)
         setImg(book.image_url)
         setAuthor(book.author)
-        console.log(book.id);
+        // console.log(book.id);
         
           }catch (error){
             alert("error", error);
@@ -48,22 +49,20 @@ const Book = (props) => {
 
 
 
-    return (
-
+        return (
                  <div >  
                    <br/>   
                      <Card style={{ width: '40rem'}}>
-                     
                         <Card.Img variant="top" style={{ width: '20rem', alignSelf: 'center' }} src={img}/>
                             <Card.Body>
                               <Card.Title style={{color: 'black'}}>{title}</Card.Title><br/>
                               <Card.Subtitle  style={{color: 'red'}}>{genre}</Card.Subtitle>
                               <Card.Subtitle style={{color: 'green'}}>{author}</Card.Subtitle>
                               <Card.Text>{body}</Card.Text>
-                         
-                              <Button href={`/books/update/` + id }> Edit Book</Button>
-                            
-                              
+                              <button className="button button1">
+                              <Link to={'/books/update/' + id }>Update Book</Link>
+                                </button>
+
                             </Card.Body>
                     </Card>
                 </div>

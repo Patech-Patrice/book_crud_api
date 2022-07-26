@@ -28,11 +28,11 @@ const MainNavigation = () => {
           </li>
             )}
 
-            {isLoggedIn && (
+            {/* {isLoggedIn && (
               <li>
                 <Link to='/profile'>Profile</Link>
               </li>
-           )}
+           )} */}
                {isLoggedIn && (
               <li>
                 <Link to='/books'>Books</Link>

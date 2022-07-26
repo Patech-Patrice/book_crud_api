@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import './../books/books.styles.scss';
 
 
 
@@ -31,32 +32,26 @@ const Books = () => {
 
 
           const handleDelete = (id) => {
-            fetch( `https://hidden-waters-38928.herokuapp.com/api/v1/books` + id, {
+            fetch( `https://hidden-waters-38928.herokuapp.com/api/v1/books/` + id, {
               method: 'DELETE'
             }).then(() => {
-              alert('Book deleted!');
-              navigate('/books');
+              alert('Book deleted! Refresh page to view changes.');
+              // navigate('/books');
             }).catch(err => {
               console.error(err)
             });
           }
-
-
-
-
-          
-        
            return (
-                    <div>
+                   <div>
                       <input
                         type="search"
                          placeholder="Search by genre..."
                          onChange={event => {setQuery(event.target.value)}} />
                            <br /> <br />
-      
-                           <Button href={`/books/new/`}>Add New Book</Button> 
-                           <Link to='/books'>Books</Link>
-                         
+
+                              <button className="button button1">
+                              <Link to='/books/new'>Add New Book</Link>
+                                </button>
                           
                               <CardGroup>
                                    {books.filter((book)=> {
@@ -79,11 +74,21 @@ const Books = () => {
                                                           <Card.Footer>
                                                             <small className="text-muted"> {book.genre} </small>
                                                             <br/>
-                                                     
-                                                          {/* <Link to={`/`} onClick={() => {handleDelete(book.id)}}> Delete Book </Link> */}
+                                                          <Button onClick={() => {handleDelete(book.id)}} >Delete Book</Button>
 
-                                                         <Button href="/books" onClick={() => {handleDelete(book.id)}} >Delete Book</Button> 
+                                                            {/* <a href="http://localhost:3001/book_crud_api#/books" onClick={() => {handleDelete(book.id)}}> 
+                                                              <input type="submit"/>
+                                                            </a> */}
+
+                                                            {/* This code redirects but crashes app
+                                                          <button className="button button1"
+                                                         onClick={() => {handleDelete(book.id)}}
+                                                         >
+                                                         <Link to='/'>Delete Book</Link>
+                                                       </button>  */}
+
                                                      
+                                                 
                         
                                                           </Card.Footer>
                                                 </Card> 

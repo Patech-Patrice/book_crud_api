@@ -41,15 +41,40 @@
     border: 1px solid black;
     margin: 0 7.5px 15px;
     overflow: hidden;
-  
-  
-  }
+    }
+
+    .button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    
+    .button1 {
+      background-color: white; 
+      color: black; 
+      border: 2px solid #008CBA;
+    }
+    
+    .button1:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+    
+   
+
 
   .card {
   
     overflow: hidden;
-    box-shadow:0 2px 20px $clr-gray300;
-    border-radius: $radius;
+    // box-shadow:0 2px 20px $clr-gray300;
+    border-radius: radius;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -76,10 +101,10 @@
       font-weight:bold;
       font-size: 1rem;
       margin: 1rem;
-      border: 2px solid $clr-primary;
+      // border: 2px solid $clr-primary;
       background: transparent;
-      color: $clr-primary;
-      border-radius:$radius;
+      // color: $clr-primary;
+      // border-radius:$radius;
       transition: 200ms ease-in, color 200ms ease-in;
     }
 

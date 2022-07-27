@@ -1,0 +1,9 @@
+Started GET "/build/bundle.js" for 127.0.0.1 at 2022-07-26 16:20:59 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/build/bundle.js"):
+  
+Started GET "/ws" for ::1 at 2022-07-26 16:21:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
